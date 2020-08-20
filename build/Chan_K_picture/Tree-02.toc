@@ -1,0 +1,5 @@
+('c:\\users\\lenovo056\\pycharmprojects\\quantitative-analysis2\\venv\\lib\\site-packages\\sqlalchemy-1.3.18-py2.7-win-amd64.egg',
+ None,
+ set(['*.py', '*.pyc', '*.pyd', '*.pyw', 'EGG-INFO']),
+ 'DATA',
+ [])

@@ -1,0 +1,5 @@
+('c:\\users\\lenovo056\\pycharmprojects\\quantitative-analysis2\\venv\\lib\\site-packages\\pymysql-0.10.0-py2.7.egg',
+ None,
+ set(['*.py', '*.pyc', '*.pyd', '*.pyw', 'EGG-INFO']),
+ 'DATA',
+ [])

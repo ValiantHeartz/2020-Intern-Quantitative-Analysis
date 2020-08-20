@@ -1,0 +1,5 @@
+('C:\\Users\\lenovo056\\PycharmProjects\\Quantitative-Analysis2\\build\\rise_to_stop_judge\\msgpack-1.0.0-py2.7.egg',
+ None,
+ set(['*.py', '*.pyc', '*.pyd', '*.pyw', 'EGG-INFO']),
+ 'DATA',
+ [])
