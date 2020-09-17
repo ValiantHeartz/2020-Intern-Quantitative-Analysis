@@ -1,5 +1,0 @@
-('c:\\users\\lenovo056\\pycharmprojects\\quantitative-analysis2\\venv\\lib\\site-packages\\ply-3.11-py2.7.egg',
- None,
- set(['*.py', '*.pyc', '*.pyd', '*.pyw', 'EGG-INFO']),
- 'DATA',
- [])
