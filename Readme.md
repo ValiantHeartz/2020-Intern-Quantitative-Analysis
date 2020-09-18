@@ -13,4 +13,5 @@ b) loc，则可以使用column名和index名进行定位，如：df.loc[‘image
 a) pd.drop(0) # 0为index,要想批量删除，可以使用for循环，此法只删除视图，pd=pd.drop(0)相当于真正删除  
 b) del pd...... #此法直接真正删除  
 7、pycharm插件库：http://search.gipoco.com/cached/1541090/ （在设置里添加）  
-8、
+8、一次性换源：-i https://pypi.tuna.tsinghua.edu.cn/simple  
+9、tushare==1.2.60，pandas==0.16.2，numpy==1.13.3，slsxwriter==1.3.0,datetime==4.3,pyinstaller==3.6

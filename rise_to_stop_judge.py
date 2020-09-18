@@ -25,7 +25,7 @@ my_date2 = str(my_date2)
 #print my_date2
 #my_date2 = '2020-08-07' #str(my_date2) #上一交易日日期2020-08-07
 my_date = my_date2[0:4] + my_date2[5:7] + my_date2[8:10]  # 变换格式后的上一交易日日期
-'''
+
 # 2.5、设置定时运行
 print 'Now sleeping until 9:25:20...'
 time_stamp_now = time.time()
@@ -37,7 +37,7 @@ for i in range(int(time_delta/60)):
     print 'Now ' + str(int(time_delta - (i+1)*60)) + 's left.'
 time.sleep(time_delta - int(time_delta/60)*60)
 print 'Now start to calculate...'
-'''
+
 # 3、条件一：筛选昨日涨停且开板次数大于1或昨日最终封板时间在14.30之后
 to_rise_stock = pro.limit_list(trade_date=my_date, limit_type='U',
                                fields='ts_code,name,close,first_time,last_time,open_times,pct_chg')  # 获取昨日涨停的股票
@@ -51,9 +51,9 @@ for i in range(len(to_rise_stock)):
             to_rise_stock.loc[i,'pct_chg'] > 11:  # 对涨跌幅进行限制，用以去掉ST股票（异常股票）和新股
         to_rise_stock = to_rise_stock.drop(i)
         continue
-    if to_rise_stock.loc[i,'open_times'] < 1:# and \
+    #if to_rise_stock.loc[i,'open_times'] < 1:# and \
             #time.mktime(time.strptime(my_date+to_rise_stock.loc[i,'last_time'],'%Y%m%d%H:%M:%S')) < time_stamp_1430:  #去掉下午2：30条件
-        to_rise_stock = to_rise_stock.drop(i)
+        #to_rise_stock = to_rise_stock.drop(i)
 print '(1/3) Filtering price limit stock completed.' + '\n' \
       'Now filtering 0.85-condition-satisfied stock.'
 to_rise_stock.to_csv('C:/0812.txt')
@@ -126,5 +126,3 @@ else:
     print '(3/3) Mission complete!' + '\n' \
         'The Excel named ' + 'price_limit ' + my_date2 + '.xlsx' + ' has saved.'
     time.sleep(3)
-
-
