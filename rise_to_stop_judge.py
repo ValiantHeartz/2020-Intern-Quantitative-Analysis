@@ -51,12 +51,12 @@ for i in range(len(to_rise_stock)):
             to_rise_stock.loc[i,'pct_chg'] > 11:  # 对涨跌幅进行限制，用以去掉ST股票（异常股票）和新股
         to_rise_stock = to_rise_stock.drop(i)
         continue
-    #if to_rise_stock.loc[i,'open_times'] < 1:# and \
+    if to_rise_stock.loc[i,'open_times'] < 1:# and \
             #time.mktime(time.strptime(my_date+to_rise_stock.loc[i,'last_time'],'%Y%m%d%H:%M:%S')) < time_stamp_1430:  #去掉下午2：30条件
-        #to_rise_stock = to_rise_stock.drop(i)
+        to_rise_stock = to_rise_stock.drop(i)
 print '(1/3) Filtering price limit stock completed.' + '\n' \
       'Now filtering 0.85-condition-satisfied stock.'
-to_rise_stock.to_csv('C:/0812.txt')
+#to_rise_stock.to_csv('C:/0812.txt')
 
 # 4、条件二：今日9:25成交量大于等于昨日最大单笔成交量的0.85
 # 将条件一中获得的股票整理好放入stock_list
@@ -83,7 +83,7 @@ for stock in stock_list:
     yesterday_close = float(today_tick_data.loc[0,'pre_close'])
     rise_amount = (today_open-yesterday_close)*100/yesterday_close
     today_yesterday = round(float(today_925_shou)/yesterday_max_shou,2)
-    if  today_yesterday >= 0.85 and rise_amount >= -1.5 and weimai_1_length != 0:
+    if  today_yesterday >= 0.85 and rise_amount >= -3 and weimai_1_length != 0:
         selected_stock_df = selected_stock_df.append({"股票代码":stock,"股票名称":today_tick_data.loc[0,'name'],
                                 "涨幅%":rise_amount,"今日/昨日":today_yesterday},ignore_index=True)
     #break
